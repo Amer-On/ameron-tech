@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block include %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form>
+            <p class="formheader">Welcome</p>
+            {% if form.errors %}
+                {{ form.errors }}
+            {% endif %}
+            {% for field in form %}
+                {{ field }}
+                <br>
+            {% endfor %}
+
+            <input type="submit" value="Register"><br>
+            <p>Already registered? <a href="{% url 'login' %}">Log in</a></p>
+        </form>
+
+        <div class="drops">
+            <div class="drop drop-1"></div>
+            <div class="drop drop-2"></div>
+            <div class="drop drop-3"></div>
+            <div class="drop drop-4"></div>
+            <div class="drop drop-5"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
